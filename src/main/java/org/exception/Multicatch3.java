@@ -11,7 +11,7 @@ public class Multicatch3 {
 		{
 			accessDatabase();
 		}		
-		catch(Exception e )//The exception FileNotFoundException is already caught by the alternative IOException		
+		catch(Exception e )//Catching all exception subclasses		
 		{
 			//throw e //fail in java 6
 			throw e; // Allowed in java 7 but not in java 6. In java 6 we would need to change the signature of main to throws Exception.

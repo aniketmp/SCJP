@@ -12,14 +12,15 @@ public class Multicatch2 {
 			accessDatabase();
 		}
 		
-		//catch(FileNotFoundException | IOException e )//The exception FileNotFoundException is already caught by the alternative IOException
+//		catch(FileNotFoundException | IOException e )//Illegal! The exception FileNotFoundException is already caught by the alternative IOException
+//		catch(IOException | FileNotFoundException e )// Neither this would work.
 		catch(IOException e)
 		{
 			e=new FileNotFoundException(); //Leagal since this is old style
 		}
 		catch(ArithmeticException | NullPointerException e)
 		{
-			//e=new ArithmeticException(); //Not-Leagal:The parameter e of a multi-catch block cannot be assigned
+			//e=new ArithmeticException(); //Not-Leagal:The parameter of a multi-catch block cannot be assigned.Since multi-catch uses multiple types, there isn't clearly defined type for the variable that you can set.
 		}
 		
 	}

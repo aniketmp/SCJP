@@ -8,7 +8,7 @@ public class Assertion2 {
 	//javac -source 1.3 Assertion2.java
 	public static void main(String[] args) {		
 //		String assert="hello";
-		
+//		System.out.println("Assert:"+assert);
 	}
 
 }
