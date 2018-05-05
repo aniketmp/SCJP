@@ -46,7 +46,7 @@ public class TokenizersApi {
 			//1-Create the scanner from String source.It can be from streams or files as well.
 			scanner=new Scanner(srcRegEx[i][0]);
 			scanner.useDelimiter(srcRegEx[i][1]);//If we skip this line then scanner will use default delimiter as space
-			List tokens=new ArrayList();
+			List<Object> tokens=new ArrayList<>();
 			//2-Tokenizing is performed within loop so that you can exit the process any time
 			while(scanner.hasNext())
 			{
