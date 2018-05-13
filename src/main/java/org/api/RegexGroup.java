@@ -8,7 +8,7 @@ public class RegexGroup {
 	 * when expression search 'one or more' occurrence. 
 	 */
 	public static void main(String[] args) {		
-		String srcRegEx[][]=new String[12][3];
+		String srcRegEx[][]=new String[13][3];
 		//                               Source       Regex    Message
 		srcRegEx[0]=new String[]{"ad1 dfdf34 bc3c"  , "\\d"  , "To find the numeric digit."}; 
 		srcRegEx[1]=new String[]{"ad1 dfdf34 bc3c"  , "\\d+"  , "To find the one or more occurance of numeric digit character."};
@@ -26,15 +26,16 @@ public class RegexGroup {
 		match is found.*/
 		
 		srcRegEx[7]=new String[]{"gggg", "g*" , "Zero or more occurance of 'g'"};
-		srcRegEx[8]=new String[]{"gggg", "g?" , "Zero or one occurance of 'g'"};
-		srcRegEx[9]=new String[]{"gggg", "g+" , "One or more occurance of 'g'"};
-		srcRegEx[10]=new String[]{"gggg", "g{2}" , "Exactly 2 occurance of 'g'"};
+		srcRegEx[8]=new String[]{"ab34ef", "\\d*" , "Another example of Zero or more occurance of digit character"};
+		srcRegEx[9]=new String[]{"gggg", "g?" , "Zero or one occurance of 'g'"};
+		srcRegEx[10]=new String[]{"gggg", "g+" , "One or more occurance of 'g'"};
+		srcRegEx[11]=new String[]{"gggg", "g{2}" , "Exactly 2 occurance of 'g'"};
 		
 		/*Reluctant quantifier (Appending a ? after quantifier)
 		This quantifier uses the approach that is opposite of greedy quantifiers. 
 		It starts from first character and processes one character at a time.*/
 		
-		srcRegEx[11]=new String[]{"gggg", "g+?" , "One or more occurance of 'g' with Reluctant qualifier"};
+		srcRegEx[12]=new String[]{"gggg", "g+?" , "One or more occurance of 'g' with Reluctant qualifier"};
 		
 		System.out.print("Note : Indexes are 0 based. ");
 		for(int i=0;i<srcRegEx.length;i++)

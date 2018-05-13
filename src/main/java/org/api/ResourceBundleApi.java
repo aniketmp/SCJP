@@ -81,7 +81,7 @@ public class ResourceBundleApi {
 		 *      		|
 		 *    config_en_US.properties
 		 * 
-		 * Note 3:properties files can create key-value in any one of these format
+		 * Note 3:proper ties files can create key-value in any one of these format
 		 * 
 		 * key=value
 		 * key:value

@@ -9,18 +9,22 @@ import java.util.regex.Pattern;
 
 public class TokenizersApi {
 	public static void main(String[] args) {
-		String srcRegEx[][]=new String[2][3];
+		String srcRegEx[][]=new String[4][3];
 		//                       Source       Regex    Message
-		srcRegEx[0]=new String[]{"ab 34 true pq"  , " "  , "Tokenized with space as delimiter"}; 
-		srcRegEx[1]=new String[]{"ab 34 true pq"  , "\\d"  , "Tokenized with any number as a delimiter"}; 
+		srcRegEx[0]=new String[]{"ab 34 true pq"  , " "  , "Tokenized with space as delimiter"};
+		srcRegEx[1]=new String[]{"ab 34 true pq"  , "\\d"  , "Tokenized with any number as a delimiter"};
+		srcRegEx[2]=new String[]{"1 a2 b 4 c4e 5e"  , " "  , "Tokenized with space as delimiter"};
+		srcRegEx[3]=new String[]{"1 a2 b 4 c4e 5e"  , "\\d"  , "Tokenized with any number as a delimiter"};
 		
 		System.out.println("=======================Tokanizing with string.split()===========================");
 		for(int i=0;i<srcRegEx.length;i++)
 		{
 			System.out.println("\n\n------"+srcRegEx[i][2]+"-------------------------\n");			
-			System.out.println("Source : "+srcRegEx[i][0]);
-			System.out.println("RegEx : "+srcRegEx[i][1]);
-			System.out.print("Tokens :"+Arrays.asList(srcRegEx[i][0].split(srcRegEx[i][1])));
+			System.out.println("Source       : "+srcRegEx[i][0]);
+			System.out.println("RegEx        : "+srcRegEx[i][1]);
+			String [] res=srcRegEx[i][0].split(srcRegEx[i][1]);
+			System.out.println("No of Tokens : "+res.length);
+			System.out.print("Tokens       : "+Arrays.asList(res));
 			
 		}
 		/*One drawback to using the String.split() method is that often you'll want to look at token as they are produced,
@@ -41,8 +45,8 @@ public class TokenizersApi {
 		for(int i=0;i<srcRegEx.length;i++)
 		{
 			System.out.println("\n\n------"+srcRegEx[i][2]+"-------------------------\n");			
-			System.out.println("Source : "+srcRegEx[i][0]);
-			System.out.println("RegEx : "+srcRegEx[i][1]);
+			System.out.println("Source       : "+srcRegEx[i][0]);
+			System.out.println("RegEx        : "+srcRegEx[i][1]);
 			//1-Create the scanner from String source.It can be from streams or files as well.
 			scanner=new Scanner(srcRegEx[i][0]);
 			scanner.useDelimiter(srcRegEx[i][1]);//If we skip this line then scanner will use default delimiter as space
@@ -57,7 +61,8 @@ public class TokenizersApi {
 				}
 				tokens.add(scanner.next());
 			}
-			System.out.print("Tokens :"+tokens);
+			System.out.println("No of Tokens : "+tokens.size());
+			System.out.print("Tokens       : "+tokens);
 		}
 	}
 	
