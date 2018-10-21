@@ -3,7 +3,7 @@ package org.io;
 import java.io.File;
 import java.io.IOException;
 
-public class DirIO 
+public class directory 
 {
 	public static void main(String[] args) 
 	{
